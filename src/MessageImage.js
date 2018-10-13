@@ -10,6 +10,7 @@ export default function MessageImage({
   lightboxProps,
   imageProps,
   imageStyle,
+  imageSourceProps,
   currentMessage,
 }) {
   return (
@@ -23,7 +24,7 @@ export default function MessageImage({
         <Image
           {...imageProps}
           style={[styles.image, imageStyle]}
-          source={{ uri: currentMessage.image }}
+          source={{ uri: currentMessage.image, ...imageSourceProps }}
         />
       </Lightbox>
     </View>
@@ -52,7 +53,7 @@ MessageImage.defaultProps = {
   containerStyle: {},
   imageStyle: {},
   imageProps: {},
-  lightboxProps: {},
+  imageSourceProps: {},
 };
 
 MessageImage.propTypes = {
@@ -60,5 +61,6 @@ MessageImage.propTypes = {
   containerStyle: ViewPropTypes.style,
   imageStyle: Image.propTypes.style,
   imageProps: PropTypes.object,
+  imageSourceProps: PropTypes.object,
   lightboxProps: PropTypes.object,
 };
