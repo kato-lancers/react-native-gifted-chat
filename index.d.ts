@@ -187,6 +187,7 @@ export interface GiftedChatProps<TMessage extends IMessage = IMessage> {
   /* Custom message image */
   renderMessageImage?(props: RenderMessageImageProps): React.ReactNode;
   /* Extra props to be passed to the <Image> component created by the default renderMessageImage */
+  imageSourceProps?: RN.ImageURISource;
   imageProps?: MessageProps;
   /*Extra props to be passed to the MessageImage's Lightbox */
   lightboxProps?: any;
